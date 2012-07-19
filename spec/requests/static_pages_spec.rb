@@ -5,22 +5,22 @@ describe "Static pages" do
 
     describe "Home page" do
       it "should have the content 'Sample App'" do
-        visit '/static_pages/home'
+        visit root_path
           page.should have_content('Sample App')
       end
       it "should have the right title" do
-        visit '/static_pages/home'
+        visit root_path
         page.should have_selector('title') 
       end
     end
 
     describe "Help Page" do
       it "shold have the content 'Help'" do
-        visit '/static_pages/help'
+        visit help_path
           page.should have_content('Help')
       end
       it "should have the right title" do
-        visit '/static_pages/help'
+        visit help_path
         page.should have_selector('title', 
                                   :text => site_name + " | Help")
       end
@@ -28,11 +28,11 @@ describe "Static pages" do
 
     describe "About Page" do
       it "should have the content 'About'" do
-        visit '/static_pages/about'
+        visit about_page
           page.should have_content('About')
       end
       it "should have the right title" do
-        visit '/static_pages/about'
+        visit about_page
         page.should have_selector('title', 
                                   :text => site_name + " | About")
       end
@@ -40,11 +40,11 @@ describe "Static pages" do
 
     describe "Contact Page" do
       it "should have the content 'Contact'" do
-        visit '/static_pages/contact'
+        visit contact_page
           page.should have_content('Contact')
       end
       it "should have the right title" do
-        visit '/static_pages/contact'
+        visit contact_path
         page.should have_selector('title', 
                                   :text => "Sample App | Contact")
       end
